@@ -1,6 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Info } from '../../shared/entities/types/general';
+import { KeyValueEnum } from '../../shared/entities/types/general';
+import { CustomerList, InvestorList, IvenstimentList } from '../../shared/entities/enums/general';
 
 @Component({
   selector: 'app-log-form',
@@ -10,10 +12,10 @@ import { Info } from '../../shared/entities/types/general';
   styleUrl: './log-form.component.scss'
 })
 
-
-
 export class LogFormComponent {
+  @Input() info: Info | null = null;
 
-  @Input() info:Info | null = null;
-
+  public investorList: KeyValueEnum[] = InvestorList;
+  public ivenstimentList: KeyValueEnum[] = IvenstimentList;
+  public customerList: KeyValueEnum[] = CustomerList;
 }
